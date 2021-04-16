@@ -20,6 +20,12 @@ class NstackBuilder implements Builder {
     final AssetId outputId = buildStep.inputId.changeExtension('.dart');
     final StringBuffer output = StringBuffer();
 
+    print('Nstack file ${buildStep.inputId}');
+
+    if(!buildStep.inputId.toString().contains('nstack.json')){
+      return;
+    }
+
     // Read nstack.json file
     final Map<String, dynamic> input =
         json.decode(await buildStep.readAsString(buildStep.inputId));
