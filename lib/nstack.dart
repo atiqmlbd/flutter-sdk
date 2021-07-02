@@ -72,7 +72,7 @@ class NStack<T> {
         platform = 'flutter';
       }
     } else{
-      platform = 'flutter';
+      platform = 'android';
     }
 
 
